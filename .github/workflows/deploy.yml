@@ -27,15 +27,13 @@ jobs:
         run: |
           julia --project -e 'using Pkg; Pkg.instantiate()'
       
-      - name: Build site with PlutoPages
-        run: |
-          julia --project -e 'using PlutoPages; PlutoPages.build(output_dir="./build")'
-      
-      - name: Create build directory if needed
+      - name: Build site for deployment
         run: |
           mkdir -p build
-          cp index.html build/index.html
-          echo "✓ Build directory ready for deployment"
+          cp index.html build/
+          cp -r tracks build/ || true
+          cp -r src build/ || true
+          echo "✓ Build directory prepared"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
