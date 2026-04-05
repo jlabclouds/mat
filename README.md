@@ -1,3 +1,7 @@
+# Template
+- 
+
+
 # 📚 Mathematics Learning Tracks Platform
 
 A comprehensive, interactive learning platform built with Julia and Pluto notebooks. Choose your mathematical track and dive into carefully structured courses designed to minimize learning overlap while providing depth and rigor.
